@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: totality-attosecond-control
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: totality-attosecond-control
+  template:
+    metadata:
+      labels:
+        app: totality-attosecond-control
+    spec:
+      containers:
+      - name: totality-attosecond-control
+        image: Agentcygroup/totality-attosecond-control:latest
+        ports:
+        - containerPort: 8000
